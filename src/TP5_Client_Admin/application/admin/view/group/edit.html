@@ -1,0 +1,50 @@
+
+    
+    <fieldset class="layui-elem-field layui-field-title site-title">
+    <legend><a name="default">编辑角色</a></legend>
+    </fieldset>
+            
+            
+    <div class="">
+        <form class="layui-form layui-form-pane" action="edit" method="post" name="myform">
+            
+            <label>ID(no_modify)：</label>
+            <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="id" placeholder="ID不可修改" value="{$lists.id}" class="layui-input" readonly="readonly"/>
+                </div>
+            </div>
+            
+            <label>角色名：</label>
+            <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="name" placeholder="请输入角色名" value="{$lists.name}" class="layui-input"/>
+                </div>
+            </div>
+    
+            <label>描述：</label>
+            <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="description" placeholder="请输入描述" value="{$lists.description}" class="layui-input"/>
+                </div>
+            </div>
+            
+            <label>规则：</label>
+            <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="rules" placeholder="请输入规则" value="{$lists.rules}" class="layui-input"/>
+                </div>
+            </div>
+            
+          <input type="submit" value="提交" name="dosubmit" class="layui-input"/><br>
+          
+        </form>
+    </div>
+        
+        
+        
+         

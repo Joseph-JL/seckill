@@ -1,0 +1,61 @@
+<!-- 右侧主体开始 -->
+    <div class="page-content">
+        <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+            <fieldset class="layui-elem-field layui-field-title site-title">
+              <legend><a name="default">查看顾客账号————共{$count}条记录</a></legend>
+            </fieldset>
+            
+            <div class="col-sm-6 pull-right">
+               <span class="btn btn-sm btn-primary pull-right" onclick="javascript:window.location.href = '/admin/Client/add'">
+               添加顾客账号
+               <i class="icon-reply icon-only"></i>
+               </span>
+             </div>
+            
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>用户名</th>
+                        <th>密码</th>
+                        <th>Email</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                
+                
+                <tbody>
+                    {volist name="lists" id="vo"}
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.username}</td>
+                        <td>{$vo.password}</td>
+                        <td>{$vo.email}</td>
+                        
+                        <td>
+                                    <div class="hidden-sm hidden-xs btn-group">
+                                        <a href='{:url("edit","id=$vo[id]")}'>
+                                           <span class="btn btn-sm btn-primary pull-right" >
+                                           编辑
+                                           <i class="icon-reply icon-only"></i>
+                                           </span>
+                                        </a>
+                                        
+                                        <a href='{:url("del","id=$vo[id]")}'>
+                                           <span class="btn btn-sm btn-primary pull-right" >
+                                           删除
+                                           <i class="icon-reply icon-only"></i>
+                                           </span>
+                                        </a>
+                                    </div>
+                       </td>
+                    </tr>
+                     {/volist}
+                     
+                </tbody>
+            </table>
+            <div class="page">{$page}</div>
+        </div>
+    </div>
+<!-- 右侧主体结束 -->

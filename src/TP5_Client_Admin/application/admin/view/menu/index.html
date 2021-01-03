@@ -1,0 +1,51 @@
+<!-- 右侧主体开始 -->
+    <div class="page-content">
+        <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+            <fieldset class="layui-elem-field layui-field-title site-title">
+              <legend><a name="default">查看菜单结构表</a></legend>
+            </fieldset>
+            
+            <!--<div class="col-sm-6 pull-right">-->
+            <!--   <span class="btn btn-sm btn-primary pull-right" onclick="javascript:window.location.href = '/admin/Admin/add'">-->
+            <!--   添加页面菜单icon-->
+            <!--   <i class="icon-reply icon-only"></i>-->
+            <!--   </span>-->
+            <!-- </div>-->
+            
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>parentid</th>
+                        <th>icon</th>
+                        <th>controller</th>
+                        <th>action</th>
+                        <th>listorder</th>
+                        <th>display</th>
+                    </tr>
+                </thead>
+                
+                
+                <tbody>
+                    {volist name="lists" id="vo"}
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.name}</td>
+                        <td>{$vo.parentid}</td>
+                        <td>{$vo.icon}</td>
+                        <td>{$vo.c}</td>
+                        <td>{$vo.a}</td>
+                        <td>{$vo.listorder}</td>
+                        <td>{$vo.display}</td>
+                        
+                        
+                    </tr>
+                     {/volist}
+                     
+                </tbody>
+            </table>
+        </div>
+    </div>
+<!-- 右侧主体结束 -->

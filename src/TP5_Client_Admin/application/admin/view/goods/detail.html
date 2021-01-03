@@ -1,0 +1,39 @@
+<!-- 右侧主体开始 -->
+    <div class="page-content">
+        <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+            <fieldset class="layui-elem-field layui-field-title site-title">
+              <legend><a name="default">{$goodsclass}商品详情————共{$count}条记录</a></legend>
+            </fieldset>
+            
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>商品No</th>
+                        <th>商品种类</th>
+                        <th>是否已分配</th>
+                        <th>分配顾客</th>
+                    </tr>
+                </thead>
+                
+                
+                <tbody>
+                    {volist name="lists" id="vo"}
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.goodsNo}</td>
+                        <td>{$goodsclass}</td>
+                        <td>{$vo.isDistributed}</td>
+                        <td>{$vo.clientName}</td>
+                    </tr>
+                     {/volist}
+                </tbody>
+            </table>
+            <div class='pagination'>{$page}</div>
+                
+        </div>
+         
+    </div>
+    
+<!-- 右侧主体结束 -->
