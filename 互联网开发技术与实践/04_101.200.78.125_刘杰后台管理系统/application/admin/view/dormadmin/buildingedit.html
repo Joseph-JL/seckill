@@ -1,0 +1,75 @@
+         <fieldset class="layui-elem-field layui-field-title site-title">
+              <legend><a name="default">添加宿舍楼</a></legend>
+         </fieldset>
+            
+            
+    <div class="login-box">
+        <form class="layui-form layui-form-pane" action="" method="post" name="myform">
+        
+          <label>楼 号(不可修改)：</label>
+          <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="building" placeholder="请输入楼号" value="{$lists.building}" class="layui-input"/>
+                </div>
+            </div>
+          
+    
+          <label>层数：</label>
+          <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="floor_num" placeholder="请输入层数" value="{$lists.floor_num}" class="layui-input"/>
+                </div>
+            </div>
+          
+    
+          <label>房间数/层：</label>
+          <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="room_num" placeholder="请输入房间数/层" value="{$lists.room_num}" class="layui-input" />
+                </div>
+            </div>
+          
+    
+          <label>床位数/房间：</label>
+          <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="bed_num" placeholder="请输入床位数/房间" value="{$lists.bed_num}" class="layui-input"/>
+                </div>
+          </div>
+          
+          <label>床位总数：</label>
+          <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="total" placeholder="请输入床位总数" value="{$lists.total}" class="layui-input"/>
+                </div>
+          </div>
+          
+          <label>已分配：</label>
+          <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="allocated" placeholder="请输入已分配" value="{$lists.allocated}" class="layui-input"/>
+                </div>
+          </div>
+            
+          <label>剩余未分配：</label>
+          <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="remained" placeholder="请输入剩余未分配" value="{$lists.remained}" class="layui-input"/>
+                </div>
+          </div>
+          
+          <input type="submit" value="提交" name="dosubmit" class="layui-input"/><br>
+          
+        </form>
+    </div>
+        
+        
+        
+         

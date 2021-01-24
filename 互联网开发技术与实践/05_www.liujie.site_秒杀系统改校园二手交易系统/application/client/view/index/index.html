@@ -1,0 +1,40 @@
+<!-- 右侧主体开始 -->
+        <div class="page-content">
+            <div class="content">
+                
+            <fieldset class="layui-elem-field layui-field-title site-title">
+              <legend><a name="default">秒杀商品详情</a></legend>
+            </fieldset>
+            
+            
+            
+            
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>goodsName</th>
+                        <th>totalNum</th>
+                        <th>distributedNum</th>
+                        <th>remainedNum</th>
+                        <th>seckillStartTime</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {volist name="lists" id="vo"}
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.goodsName}</td>
+                        <td>{$vo.totalNum}</td>
+                        <td>{$vo.distributedNum}</td>
+                        <td>{$vo.remainedNum}</td>
+                        <td>{$vo.seckillStartTime}</td>
+                    </tr>
+                     {/volist}  
+                </tbody>
+            </table>
+            
+            </div>
+        </div>
+<!-- 右侧主体结束 -->

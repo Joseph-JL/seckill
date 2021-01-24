@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>用户登录页面</title>
+
+  <meta charset="UTF-8"/>
+
+  <style type="text/css">
+
+    *{margin:0px;padding:0px;}
+
+    ul{
+
+      width:400px;
+
+      list-style:none;
+
+      margin:50px auto;
+
+    }
+
+    li{
+
+      padding:12px;
+
+      position:relative;
+
+    }
+
+    label{
+
+      width:80px;
+
+      display:inline-block;
+
+      float:left;
+
+      line-height:30px;
+
+    }
+
+    input[type='text'],input[type='password']{
+
+      height:30px;
+
+    }
+
+    img{
+
+      margin-left:10px;
+
+    }
+
+    input[type="submit"]{
+
+      margin-left:80px;
+
+      padding:5px 10px;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<form action="login.php" method="post">
+
+  <ul>
+
+    <li>
+
+      <label>用户名：</label>
+
+      <input type="text" name="username" placeholder="请输入注册账号"/>
+
+    </li>
+
+    <li>
+
+      <label>密 码：</label>
+
+      <input type="password" name="password" placeholder="请输入密码" />
+
+    </li>
+    
+    <li>
+      <input type="submit" value="登录" />
+    </li>
+    
+    
+    <li>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;没有账号请点这里<a href="zhuce.html">注册</a>!
+    </li>
+
+    
+    
+
+  </ul>
+
+</form>
+
+
+
+</body>
+
+</html>

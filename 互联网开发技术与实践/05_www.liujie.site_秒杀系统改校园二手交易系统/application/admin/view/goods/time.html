@@ -1,0 +1,32 @@
+    <fieldset class="layui-elem-field layui-field-title site-title">
+        <legend><a name="default">设置秒杀开始时间</a></legend>
+    </fieldset>
+            
+            
+    <div class="">
+        <form class="layui-form layui-form-pane" action="time" method="post" name="myform">
+            
+            <label>ID(no_modify)：</label>
+            <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="id" placeholder="ID不可修改" value="{$lists.id}" class="layui-input" readonly="readonly"/>
+                </div>
+            </div>
+            
+            <label>秒杀开始时间(请按对应格式设置时间)：</label>
+          <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="seckillStartTime" placeholder="请输入秒杀开始时间" value="{$lists.seckillStartTime}" class="layui-input"/>
+                </div>
+            </div>
+            
+          <input type="submit" value="提交" name="dosubmit" class="layui-input"/><br>
+          
+        </form>
+    </div>
+        
+        
+        
+         

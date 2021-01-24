@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>liujie</title>
+    </head>
+    
+    <body>
+        
+        <p>
+            我有&nbsp;100000000&yen;
+        </p>
+        
+        <p id="demo">
+            JavaScript 可以触发事件，就像按钮点击。
+        </p>
+        <script>
+         function myFunction()
+        {
+            document.getElementById("demo").innerHTML="Hello JavaScript!";
+            document.getElementById("demo").style.color="#ff0000";
+        }
+        </script>
+        <button type="button" onclick="myFunction()">点我！
+        </button>
+        
+        
+        
+        
+        <script>
+            document.write("Hello World!");
+        </script>
+        <noscript>
+            抱歉，你的浏览器不支持JavaScript!
+        </noscript>
+        
+        <p style="background-color:#ffff00">
+            通过十六进制设置背景颜色
+        </p><br>
+        
+        <p style="background-color:rgb(255,255,0)">
+            通过rgb设置背景颜色
+        </p><br>
+        
+        <p style="background-color:yellow">
+            通过rgb设置背景颜色
+        </p><br>
+
+        
+        
+        <iframe src="http://www.liujie.site" name="iframe_a" width="400" height="400" frameborder="5" >
+        </iframe>
+        <br>
+        <a href="http://www.runoob.com" target="iframe_a">RUNOOB.COM</a>
+        
+        
+        
+        <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+            0<input type="range" id="a" value="50">100
+            +
+            <input type="number" id="b" value="50">
+            =
+            <output name="x" for="a b"></output>
+            
+        </form>
+        
+        <input list="browsers">
+        <datalist id="browsers">
+            <option value="Internet Explorer"></option>
+            <option value="Firefox"></option>
+            <option value="Chrome"></option>
+        </datalist>
+        <input type="submit"><br>
+        
+        <select>
+            <optgroup label="Male">
+                <option value="liujie">liujie</option>
+                <option value="zhangsan">zhangsan</option>
+            </optgroup>
+            
+            <optgroup label="Female">
+                <option value="liuyifei">liuyifei</option>
+                <option value="zhaoliyin">zhaoliyin</option>
+            </optgroup>
+        </select>
+        
+        <h3>发送邮件到 someone@example.com:</h3>
+        
+        <form action="MAILTO:someone@example.com" method="post" enctype="text/plain">
+            
+            <laber for="male">Male</laber>
+            <input type="radio" name="sex" id="male" value="male"><br>
+            <laber for="female">Female</laber>
+            <input type="radio" name="sex" id="male" value="female"><br>
+            
+            name:<br>
+            <input type="text" name="name" value="your name"><br>
+            E-mail:<br>
+            <input type="text" name="mail" value="your emial"><br>
+            Comment:<br>
+            <input type="text" name="comment" value="your comment"><br>
+            
+            <input type="submit" value="发送">
+            <input type="reset" value="重置">
+            
+        </form>
+        
+        <from action="">
+            <fieldset>
+                <legend>Personal information:</legend>
+                
+                name:<input type="text" size="30"><br>
+                E-mail:<input type="text" size="30"><br>
+                Birthday:<input type="text" size="10"><br>
+            </fieldset>
+        </from>
+        
+        <form>
+            First name:<input type="text" name="firstname" value="liu"><br>
+            Last name:<input type="text" name="lastname" value="jie"><br>
+            Password:<input type="password" name="pwd"><br>
+            
+            <input type="radio" name="sex" value="male">Male<br>
+            <input type="radio" name="sex" value="female">Female<br>
+            
+            <input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+            <input type="checkbox" name="vehicle" value="Car">I have a car<br>
+            
+            <input type="submit" value="Submit"><br>
+            
+            
+        </form>
+        
+        <form action="">
+            <select name="students">
+                <option value="zhangsan">zhangsan</option>
+                <option value="lisi">lisi</option>
+                <option value="liujie">liujie</option>
+            </select>
+        </form>
+        
+        <textarea rows="10" cols="30">
+            我是一个文本框
+        </textarea>
+        
+        <form action="">
+            <input type="button" value="hello world">
+        </form>
+        
+        
+        
+        <table width="500" border="0">
+            <tr>
+                <td colspan="2" style="backgroud-color:#FFA500;">
+                    <h1>网页标题</h1>
+                </td>
+            </tr>
+             
+            <tr>  
+                <td style="backgroud-color:#ffd700;width:100px;">
+                    <b>菜单</b><br>
+                    HTML<br>
+                    CSS<br>
+                    JavaScript
+                </td>
+                <td style="backgroud-color:#eeeeee;height:200px;width:400px;">
+                    内容在这里
+                </td>
+            </tr>
+            
+            <tr>
+            <td colspan="2" style="backgroud-color:#ffa500;text-align:center;">
+                版权 @ liujie.com
+            </td>
+            </tr>
+            
+        </table>
+        
+    </body>
+</html>

@@ -1,0 +1,79 @@
+<!-- 右侧主体开始 -->
+    <div class="page-content">
+        <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+            <fieldset class="layui-elem-field layui-field-title site-title">
+              <legend><a name="default">查看商品种类</a></legend>
+            </fieldset>
+            
+            <div class="col-sm-6 pull-right">
+               <span class="btn btn-sm btn-primary pull-right" onclick="javascript:window.location.href = '/admin/Goods/add'">
+               添加商品种类
+               <i class="icon-reply icon-only"></i>
+               </span>
+             </div>
+            
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>商品名称</th>
+                        <th>总量</th>
+                        <th>已抢</th>
+                        <th>剩余</th>
+                        <th>秒杀开始时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                
+                
+                <tbody>
+                    {volist name="lists" id="vo"}
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.goodsName}</td>
+                        <td>{$vo.totalNum}</td>
+                        <td>{$vo.distributedNum}</td>
+                        <td>{$vo.remainedNum}</td>
+                        <td>{$vo.seckillStartTime}</td>
+                        
+                        <td>
+                                    <div class="hidden-sm hidden-xs btn-group">
+                                        <a href='{:url("detail","id=$vo[id]")}'>
+                                           <span class="btn btn-sm btn-primary pull-right" >
+                                           详情
+                                           <i class="icon-reply icon-only"></i>
+                                           </span>
+                                        </a>
+                                        
+                                        <a href='{:url("edit","id=$vo[id]")}'>
+                                           <span class="btn btn-sm btn-primary pull-right" >
+                                           编辑
+                                           <i class="icon-reply icon-only"></i>
+                                           </span>
+                                        </a>
+                                        
+                                        <a href='{:url("del","id=$vo[id]")}'>
+                                           <span class="btn btn-sm btn-primary pull-right" >
+                                           删除
+                                           <i class="icon-reply icon-only"></i>
+                                           </span>
+                                        </a>
+                                        
+                                        <a href='{:url("time","id=$vo[id]")}'>
+                                           <span class="btn btn-sm btn-primary pull-right" >
+                                           设置秒杀开始时间
+                                           <i class="icon-reply icon-only"></i>
+                                           </span>
+                                        </a>
+                                    </div>
+                       </td>
+                    </tr>
+                     {/volist}
+                     
+                </tbody>
+            </table>
+            <div class="page">{$page}</div>
+        </div>
+    </div>
+<!-- 右侧主体结束 -->

@@ -1,0 +1,56 @@
+    <fieldset class="layui-elem-field layui-field-title site-title">
+        <legend><a name="default">编辑商品种类</a></legend>
+    </fieldset>
+            
+            
+    <div class="">
+        <form class="layui-form layui-form-pane" action="edit" method="post" name="myform">
+            
+            <label>ID(no_modify)：</label>
+            <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="id" placeholder="ID不可修改" value="{$lists.id}" class="layui-input" readonly="readonly"/>
+                </div>
+            </div>
+            
+            <label>商品名称：</label>
+          <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="goodsName" placeholder="请输入商品名称" value="{$lists.goodsName}" class="layui-input"/>
+                </div>
+            </div>
+    
+          <label>总数(与剩余同步修改)：</label>
+            <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="totalNum" placeholder="请输入总数" value="{$lists.totalNum}" class="layui-input"/>
+                </div>
+            </div>
+    
+          <label>已抢(no_modify)：</label>
+            <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="distributedNum" placeholder="请输入已抢" value="{$lists.distributedNum}" class="layui-input" readonly="readonly" />
+                </div>
+            </div>
+    
+          <label>剩余(与总数同步修改)：</label>
+            <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="remainedNum" placeholder="请输入剩余" value="{$lists.remainedNum}" class="layui-input"/>
+                </div>
+            </div>
+            
+          <input type="submit" value="提交" name="dosubmit" class="layui-input"/><br>
+          
+        </form>
+    </div>
+        
+        
+        
+         

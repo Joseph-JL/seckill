@@ -1,0 +1,85 @@
+<!-- 右侧主体开始 -->
+        <div class="page-content">
+          <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+            
+            <!--
+            <blockquote class="layui-elem-quote">
+                注意：x-admin 1.1每个页面都可以独立设置一个背景主题，如果每个都设置会比较消耗本地的存储，如果想全部恢复，请重置。
+            </blockquote>
+            <blockquote class="layui-elem-quote">
+                欢迎使用x-admin 后台模版！<span class="f-14">v1.0</span>官方交流群： 519492808
+            </blockquote>
+            -->
+            <fieldset class="layui-elem-field layui-field-title site-title">
+              <legend><a name="default">管理员管理</a></legend>
+            </fieldset>
+            
+            
+            <div class="col-sm-6 pull-right">
+               <span class="btn btn-sm btn-primary pull-right" onclick="javascript:window.location.href = '/admin/Useradmin/add'">
+               添加用户
+               <i class="icon-reply icon-only"></i>
+               </span>
+             </div>
+            
+            
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>用户名</th>
+                        <th>角色</th>
+                        <th>邮箱</th>
+                        <th>管理员操作</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {volist name="lists" id="vo"}
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.username}</td>
+                        <td>{$vo.name}</td>
+                        <td>{$vo.email}</td>
+                        
+                        
+                        
+                        <td>
+                            
+                                    <div class="hidden-sm hidden-xs btn-group">
+
+                                        <a href='{:url("edit","username=$vo[username]")}'>
+                                           <span class="btn btn-sm btn-primary pull-right" >
+                                           编辑
+                                           <i class="icon-reply icon-only"></i>
+                                           </span>
+                                        </a>
+                                        
+                                        <a href='{:url("del","username=$vo[username]")}'>
+                                           <span class="btn btn-sm btn-primary pull-right" >
+                                           删除
+                                           <i class="icon-reply icon-only"></i>
+                                           </span>
+                                        </a>
+                                    </div>
+                                    
+                                    
+                                </td>
+                        
+                        
+                        
+                    </tr>
+                     {/volist}  
+                     
+                     
+                     
+                </tbody>
+            </table>
+            
+            
+            
+            
+            </div>
+        </div>
+<!-- 右侧主体结束 -->

@@ -1,0 +1,59 @@
+<!-- 右侧主体开始 -->
+    <div class="page-content">
+        <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+            <fieldset class="layui-elem-field layui-field-title site-title">
+              <legend><a name="default">我发布的</a></legend>
+            </fieldset>
+            
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>商品名称</th>
+                        <th>商品描述</th>
+                        <th>价格/元</th>
+                        <th>商品发布时间</th>
+                        <th>商品状态</th>
+                        <th>商品购买时间</th>
+                        <th>买家用户名</th>
+                        <th>买家email</th>
+                        <th>商品交易状态</th>
+                        <th>操作</th>
+                        
+                    </tr>
+                </thead>
+                
+                
+                <tbody>
+                    {volist name="lists" id="vo"}
+                    <tr>
+                        <td>{$vo.No}</td>
+                        <td>{$vo.goodsname}</td>
+                        <td>{$vo.description}</td>
+                        <td>{$vo.price}</td>
+                        <td>{:date('Y-m-d H:m:s',$vo.saletime)}</td>
+                        <td>{$vo.sellstatus}</td>
+                        <td>{:date('Y-m-d H:m:s',$vo.buytime)}</td>
+                        <td>{$vo.buyername}</td>
+                        <td>{$vo.buyeremail}</td>
+                        <td>{$vo.dealstatus}</td>
+                        
+                        <td>
+                                    <div class="hidden-sm hidden-xs btn-group">
+                                        <a href='{:url("dealstatus","goodsid=$vo[id]")}'>
+                                           <span class="btn btn-sm btn-primary pull-right" >
+                                           确认
+                                           <i class="icon-reply icon-only"></i>
+                                           </span>
+                                        </a>
+                                    </div>
+                       </td>
+                    </tr>
+                     {/volist}
+                     
+                </tbody>
+            </table>
+        </div>
+    </div>
+<!-- 右侧主体结束 -->

@@ -1,0 +1,41 @@
+<!-- 右侧主体开始 -->
+    <div class="page-content">
+        <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+            <fieldset class="layui-elem-field layui-field-title site-title">
+              <legend><a name="default">查看操作日志————共{$count}条记录</a></legend>
+            </fieldset>
+            
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>URL</th>
+                        <th>UserID</th>
+                        <th>Username</th>
+                        <th>操作IP</th>
+                        <th>操作时间</th>
+                    </tr>
+                </thead>
+                
+                
+                <tbody>
+                    {volist name="lists" id="vo"}
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.url}</td>
+                        <td>{$vo.userid}</td>
+                        <td>{$vo.username}</td>
+                        <td>{:long2ip($vo.ip)}</td>
+                        <td>{:date('Y-m-d H:m:s',$vo.time)}</td>
+                    </tr>
+                     {/volist}
+                </tbody>
+            </table>
+            <div class='pagination'>{$page}</div>
+                
+        </div>
+         
+    </div>
+    
+<!-- 右侧主体结束 -->

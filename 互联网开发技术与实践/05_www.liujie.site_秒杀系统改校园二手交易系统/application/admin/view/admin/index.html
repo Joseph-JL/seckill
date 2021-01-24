@@ -1,0 +1,64 @@
+<!-- 右侧主体开始 -->
+    <div class="page-content">
+        <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+            <fieldset class="layui-elem-field layui-field-title site-title">
+              <legend><a name="default">查看管理员账号</a></legend>
+            </fieldset>
+            
+            <div class="col-sm-6 pull-right">
+               <span class="btn btn-sm btn-primary pull-right" onclick="javascript:window.location.href = '/admin/Admin/add'">
+               添加用户
+               <i class="icon-reply icon-only"></i>
+               </span>
+             </div>
+            
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>用户名</th>
+                        <th>角色</th>
+                        <th>邮箱</th>
+                        <th>最后登录IP</th>
+                        <th>最后登录时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                
+                
+                <tbody>
+                    {volist name="lists" id="vo"}
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.username}</td>
+                        <td>{$vo.groupName}</td>
+                        <td>{$vo.email}</td>
+                        <td>{:long2ip($vo.lastloginip)}</td>
+                        <td>{:date('Y-m-d H:m:s',$vo.lastlogintime)}</td>
+                        
+                        <td>
+                                    <div class="hidden-sm hidden-xs btn-group">
+                                        <a href='{:url("edit","username=$vo[username]")}'>
+                                           <span class="btn btn-sm btn-primary pull-right" >
+                                           编辑
+                                           <i class="icon-reply icon-only"></i>
+                                           </span>
+                                        </a>
+                                        
+                                        <a href='{:url("del","username=$vo[username]")}'>
+                                           <span class="btn btn-sm btn-primary pull-right" >
+                                           删除
+                                           <i class="icon-reply icon-only"></i>
+                                           </span>
+                                        </a>
+                                    </div>
+                       </td>
+                    </tr>
+                     {/volist}
+                     
+                </tbody>
+            </table>
+        </div>
+    </div>
+<!-- 右侧主体结束 -->

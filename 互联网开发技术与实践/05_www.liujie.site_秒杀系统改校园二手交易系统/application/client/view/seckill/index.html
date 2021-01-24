@@ -1,0 +1,140 @@
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+         <fieldset class="layui-elem-field layui-field-title site-title">
+              <legend><a name="default">填写秒杀信息</a></legend>
+         </fieldset>
+    
+        <!--秒杀开始时间-->
+        <p style="color: #fff;font-size: 16px;">
+       秒杀开始时间：<strong>{$seckillStartTime}</strong>
+        </p>
+        
+        <!--系统时间-->
+        <p style="color: #fff;font-size: 16px;">
+        系统时间：<strong id="timer"></strong>
+        </p>
+        
+        <p style="color: #fff;font-size: 16px;">
+        系统状态：<strong id="start">未开放</strong>
+        </p>
+        
+
+
+
+    <div class="login-box">
+        <form id="myform" class="layui-form layui-form-pane" action="#" method="post" name="myform" >
+          
+          <label>用户名：</label>
+          <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input id="username" onchange="namecheck(this.id,this.value)" type="text" name="username" placeholder="请输入用户名" class="layui-input" required="required" value="{$username}" readonly="readonly"/>
+                  <span id="usernameflag" style="color:red"></span>
+                </div>
+            </div>
+          
+          <label>验证码：</label>
+          <div class="layui-form-item">
+                <div class="layui-input-inline login-inline">
+                  <div>{:captcha_img()}</div>
+                  <input id="checkcode" onchange="" type="text" name="checkcode" placeholder="请输入验证码" class="layui-input" required="required" />
+                  <span id="checkcodeflag" style="color:red"></span>
+                </div>
+           </div>
+          
+          <input id="submit" type="submit" value="提交" name="dosubmit" disabled="disabled" class="layui-input"/><br>
+          
+        </form>
+    </div>
+    
+    
+    <script>
+        //验证用户名输入
+        function namecheck(id,x){
+            //只能为数字或者字母
+            for(var i=0;i<x.length;i++){
+                if(!(x[i]>="0"&&x[i]<="9"||x[i]>="a"&&x[i]<="z"||x[i]>="A"&&x[i]<="Z")){
+                    document.getElementById(id+"flag").innerHTML="*输入不合法";
+                    return;
+                }
+            }
+            document.getElementById(id+"flag").innerHTML="";
+        }
+        
+        //前端验证输入验证码(AJAX方式)
+        function codecheck(){
+            var subData=$("#checkcode").serialize();
+            $.ajax({
+                type:"post",
+                url:"{:url('/client/seckill/codecheck')}",  //数据传输的控制器方法
+                data:subData,//这里data传递过去的是序列化以后的字符串
+                success:function(data){
+                    document.getElementById("checkcodeflag").innerHTML=data;
+                }
+            });
+        }
+
+    </script>
+    
+    <script type="text/javascript">
+        //系统时间
+        window.onload = currentTime();
+        function currentTime() {
+				var d = new Date(),
+				str = '';
+				str += d.getFullYear() + '-'; //获取当前年份 
+				str += d.getMonth() + 1 + '-'; //获取当前月份（0——11） 
+				str += d.getDate() + ' ';
+				str += d.getHours() + ':';
+				str += d.getMinutes() + ':';
+				str += d.getSeconds() ;
+				
+				document.getElementById("timer").innerHTML = str;
+				setTimeout("currentTime()",1000);
+		}
+    
+        //到时间方可提交
+        window.onload = remainTime({$timeSec});//加载页面时自动执行方法
+        function remainTime(timeSecString){
+            //秒杀时间距离"January 1,1970 00:00:00"秒数
+            var timeSec=parseInt(timeSecString);
+            
+            //当前时间距离"January 1,1970 00:00:00"秒数
+            var time10="January 1,1970 00:00:00";
+            var time11=new Date(time10);
+            var time12=time11.getTime()/1000;
+            
+            var curtime=new Date();
+            var curtime1= curtime.getTime()/1000;
+            var curtime2=parseInt(curtime1) 
+            
+            var curtimeSec=curtime2-time12;
+            
+            // document.getElementById("start1").innerHTML = curtimeSec;//调试信息
+            // document.getElementById("start2").innerHTML = timeSec;
+            
+            //判断秒杀时间是否开始
+            if(curtimeSec>=timeSec){
+                $("#start").text("系统开放，开始秒杀");
+                //倒计时结束,按钮状态改为可用
+                document.getElementById("submit").disabled=false;
+                
+                //前端到秒杀时间才接收表单提交URL
+                $.ajax({
+                    type:"post",
+                    url:"{:url('/client/seckill/formURL')}",  //数据传输的控制器方法
+                    data:"",//这里data传递过去的是序列化以后的字符串
+                    success:function(data){
+                        document.getElementById("myform").action=data;
+                    }
+                });
+            }
+            
+            //setTimeout("remainTime(timeSecString1)",1000); //setTimeout 传递带参数的函数无效果
+            setTimeout(function(){remainTime(timeSecString)}, 1000);
+        }
+        
+    </script>
+
+    
+    

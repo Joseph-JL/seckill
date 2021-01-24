@@ -1,0 +1,60 @@
+         <fieldset class="layui-elem-field layui-field-title site-title">
+              <legend><a name="default">编辑用户</a></legend>
+         </fieldset>
+            
+    
+            
+    <div class="login-box">
+        <form class="layui-form layui-form-pane" action="" method="post" name="myform">
+        
+          <label>用户名：（不可修改）</label>
+          <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="username" placeholder="请输入注册账号" value="{$lists.username}" class="layui-input"/>
+                </div>
+            </div>
+          
+    
+          <label>密 码：</label>
+          <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="password" name="password" placeholder="请输入密码" value="" class="layui-input"/>
+                </div>
+            </div>
+          
+    
+          <label>确认密码：</label>
+          <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="password" name="confirm" placeholder="请再次输入密码" value="" class="layui-input" />
+                </div>
+            </div>
+          
+    
+          <label>邮 箱：</label>
+          <div class="layui-form-item">
+                <label class="layui-form-label login-form"><i class="iconfont">&#xe6b8;</i></label>
+                <div class="layui-input-inline login-inline">
+                  <input type="text" name="email" placeholder="请输入邮箱" value="{$lists.email}" class="layui-input"/>
+                </div>
+            </div>
+          
+          
+          <label>所属组：</label>
+            
+                <div>
+                    <input type="checkbox" name="student" class="layui-input" value="1" {if $lists.role_id==1 }checked=true {/if}/ >学生
+                    <input type="checkbox" name="teacher" class="layui-input" value="2" {if $lists.role_id==2 }checked=true {/if}/>老师
+                    <input type="checkbox" name="admin" class="layui-input" value="3" {if $lists.role_id==3 }checked=true {/if}/>管理员
+                </div>
+          <input type="submit" value="提交" name="dosubmit" class="layui-input"/><br>
+          
+        </form>
+    </div>
+        
+        
+        
+         
